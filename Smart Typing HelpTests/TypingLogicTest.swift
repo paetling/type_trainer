@@ -22,7 +22,6 @@ class TestTypingLogic: TypingLogic {
   override func incrementWordsTyped(character: Character) {
     super.incrementWordsTyped(character)
   }
-  
   override func shiftPreceedingCharacters(character: Character) {
     super.shiftPreceedingCharacters(character)
   }
@@ -117,47 +116,79 @@ class TypingLogicTest: XCTestCase {
   func testProcessCharacter1() {
     let typingLogic = TestTypingLogic(typingGoal: "Test String 1; Test String 2;")
     
-    XCTAssertEqual(typingLogic.processCharachter("T"), true)
+    XCTAssertEqual(typingLogic.processCharacter("T"), true)
     XCTAssertEqual(typingLogic.index, 0)
     XCTAssertEqual(typingLogic.correctIndex, 0)
     XCTAssertEqual(typingLogic.maxIndex, 0)
     
-    XCTAssertEqual(typingLogic.processCharachter("e"), true)
-    XCTAssertEqual(typingLogic.processCharachter("s"), true)
-    XCTAssertEqual(typingLogic.processCharachter("t"), true)
+    XCTAssertEqual(typingLogic.processCharacter("e"), true)
+    XCTAssertEqual(typingLogic.processCharacter("s"), true)
+    XCTAssertEqual(typingLogic.processCharacter("t"), true)
     XCTAssertEqual(typingLogic.index, 3)
     XCTAssertEqual(typingLogic.correctIndex, 3)
     XCTAssertEqual(typingLogic.maxIndex, 3)
     
-    XCTAssertEqual(typingLogic.processCharachter("s"), false)
+    XCTAssertEqual(typingLogic.processCharacter("s"), false)
     XCTAssertEqual(typingLogic.index, 4)
     XCTAssertEqual(typingLogic.correctIndex, 3)
     XCTAssertEqual(typingLogic.maxIndex, 3)
     
-    XCTAssertEqual(typingLogic.processCharachter("S"), true)
-    XCTAssertEqual(typingLogic.processCharachter("t"), true)
-    XCTAssertEqual(typingLogic.processCharachter("r"), true)
+    XCTAssertEqual(typingLogic.processCharacter("S"), true)
+    XCTAssertEqual(typingLogic.processCharacter("t"), true)
+    XCTAssertEqual(typingLogic.processCharacter("r"), true)
     XCTAssertEqual(typingLogic.index, 7)
     XCTAssertEqual(typingLogic.correctIndex, 3)
     XCTAssertEqual(typingLogic.maxIndex, 3)
   }
   
+  func testMistypedIndices() {
+    let typingLogic = TestTypingLogic(typingGoal: "Test String 1;")
+    
+    typingLogic.processCharacter("T")
+    typingLogic.processCharacter("e")
+    typingLogic.processCharacter("d")
+    typingLogic.processCharacter("d")
+    typingLogic.deleteCharacter()
+    typingLogic.deleteCharacter()
+    typingLogic.processCharacter("s")
+    typingLogic.processCharacter("t")
+    typingLogic.processCharacter(" ")
+    typingLogic.processCharacter("S")
+    typingLogic.processCharacter("r")
+    typingLogic.processCharacter("i")
+    typingLogic.deleteCharacter()
+    typingLogic.deleteCharacter()
+    typingLogic.processCharacter("t")
+    typingLogic.processCharacter("r")
+    typingLogic.processCharacter("i")
+    typingLogic.processCharacter("n")
+    typingLogic.processCharacter("g")
+    typingLogic.processCharacter(" ")
+    typingLogic.processCharacter("1")
+    typingLogic.processCharacter(" ")
+    typingLogic.deleteCharacter()
+    typingLogic.processCharacter(";")
+    
+    XCTAssertEqual(typingLogic.mistypedIndices.count, 5)
+    XCTAssertEqual(typingLogic.mistypedIndices.sort(), [2, 3, 6, 7, 13])
+  }
+  
   func testDeleteCharacter1() {
     let typingLogic = TestTypingLogic(typingGoal: "Test String 1; Test String 2;")
     
-    XCTAssertEqual(typingLogic.processCharachter("T"), true)
+    XCTAssertEqual(typingLogic.processCharacter("T"), true)
     XCTAssertEqual(typingLogic.index, 0)
     XCTAssertEqual(typingLogic.correctIndex, 0)
     XCTAssertEqual(typingLogic.maxIndex, 0)
     
-    XCTAssertEqual(typingLogic.processCharachter("e"), true)
-    XCTAssertEqual(typingLogic.processCharachter("s"), true)
-    XCTAssertEqual(typingLogic.processCharachter("t"), true)
+    XCTAssertEqual(typingLogic.processCharacter("e"), true)
+    XCTAssertEqual(typingLogic.processCharacter("s"), true)
+    XCTAssertEqual(typingLogic.processCharacter("t"), true)
     XCTAssertEqual(typingLogic.index, 3)
     XCTAssertEqual(typingLogic.correctIndex, 3)
     XCTAssertEqual(typingLogic.maxIndex, 3)
     
-    XCTAssertEqual(typingLogic.processCharachter("s"), false)
+    XCTAssertEqual(typingLogic.processCharacter("s"), false)
     XCTAssertEqual(typingLogic.index, 4)
     XCTAssertEqual(typingLogic.correctIndex, 3)
     XCTAssertEqual(typingLogic.maxIndex, 3)
@@ -167,10 +198,10 @@ class TypingLogicTest: XCTestCase {
     XCTAssertEqual(typingLogic.correctIndex, 3)
     XCTAssertEqual(typingLogic.maxIndex, 3)
     
-    XCTAssertEqual(typingLogic.processCharachter(" "), true)
-    XCTAssertEqual(typingLogic.processCharachter("S"), true)
-    XCTAssertEqual(typingLogic.processCharachter("t"), true)
-    XCTAssertEqual(typingLogic.processCharachter("r"), true)
+    XCTAssertEqual(typingLogic.processCharacter(" "), true)
+    XCTAssertEqual(typingLogic.processCharacter("S"), true)
+    XCTAssertEqual(typingLogic.processCharacter("t"), true)
+    XCTAssertEqual(typingLogic.processCharacter("r"), true)
     XCTAssertEqual(typingLogic.index, 7)
     XCTAssertEqual(typingLogic.correctIndex, 7)
     XCTAssertEqual(typingLogic.maxIndex, 7)
@@ -179,34 +210,34 @@ class TypingLogicTest: XCTestCase {
   func testIsDone() {
     let typingLogic = TestTypingLogic(typingGoal: "Test String 1")
     
-    XCTAssertEqual(typingLogic.processCharachter("T"), true)
+    XCTAssertEqual(typingLogic.processCharacter("T"), true)
     XCTAssertEqual(typingLogic.isDone(), false)
     
-    XCTAssertEqual(typingLogic.processCharachter("e"), true)
-    XCTAssertEqual(typingLogic.processCharachter("s"), true)
-    XCTAssertEqual(typingLogic.processCharachter("t"), true)
+    XCTAssertEqual(typingLogic.processCharacter("e"), true)
+    XCTAssertEqual(typingLogic.processCharacter("s"), true)
+    XCTAssertEqual(typingLogic.processCharacter("t"), true)
     XCTAssertEqual(typingLogic.isDone(), false)
     
-    XCTAssertEqual(typingLogic.processCharachter("s"), false)
+    XCTAssertEqual(typingLogic.processCharacter("s"), false)
     XCTAssertEqual(typingLogic.isDone(), false)
     
     typingLogic.deleteCharacter()
     XCTAssertEqual(typingLogic.isDone(), false)
     
-    XCTAssertEqual(typingLogic.processCharachter(" "), true)
-    XCTAssertEqual(typingLogic.processCharachter("S"), true)
-    XCTAssertEqual(typingLogic.processCharachter("t"), true)
-    XCTAssertEqual(typingLogic.processCharachter("r"), true)
-    XCTAssertEqual(typingLogic.processCharachter("i"), true)
-    XCTAssertEqual(typingLogic.processCharachter("n"), true)
-    XCTAssertEqual(typingLogic.processCharachter("g"), true)
-    XCTAssertEqual(typingLogic.processCharachter(" "), true)
+    XCTAssertEqual(typingLogic.processCharacter(" "), true)
+    XCTAssertEqual(typingLogic.processCharacter("S"), true)
+    XCTAssertEqual(typingLogic.processCharacter("t"), true)
+    XCTAssertEqual(typingLogic.processCharacter("r"), true)
+    XCTAssertEqual(typingLogic.processCharacter("i"), true)
+    XCTAssertEqual(typingLogic.processCharacter("n"), true)
+    XCTAssertEqual(typingLogic.processCharacter("g"), true)
+    XCTAssertEqual(typingLogic.processCharacter(" "), true)
     XCTAssertEqual(typingLogic.isDone(), false)
     
-    XCTAssertEqual(typingLogic.processCharachter(" "), false)
+    XCTAssertEqual(typingLogic.processCharacter(" "), false)
     XCTAssertEqual(typingLogic.isDone(), false)
     typingLogic.deleteCharacter()
-    XCTAssertEqual(typingLogic.processCharachter("1"), true)
+    XCTAssertEqual(typingLogic.processCharacter("1"), true)
     XCTAssertEqual(typingLogic.isDone(), true)
   }
   
