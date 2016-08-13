@@ -25,6 +25,18 @@ class TestTypingLogic: TypingLogic {
   override func shiftPreceedingCharacters(character: Character) {
     super.shiftPreceedingCharacters(character)
   }
+  override func incrementIndices(incrementCorrect: Bool) {
+    super.incrementIndices(incrementCorrect)
+  }
+  override func decrementIndices(decrementCorrect: Bool) {
+    super.decrementIndices(decrementCorrect)
+  }
+  override func fillWhiteSpace() {
+    super.fillWhiteSpace()
+  }
+  override func removeWhiteSpace() {
+    super.removeWhiteSpace()
+  }
 }
 
 class TypingLogicTest: XCTestCase {
@@ -41,6 +53,117 @@ class TypingLogicTest: XCTestCase {
     XCTAssertEqual(map["asdfas"], 2)
     XCTAssertEqual(map["dog"], 1)
     XCTAssertEqual(map["b"], nil)
+  }
+  
+  func testIncrementIndices1() {
+    let typingLogic = TypingLogic(typingGoal: "Test String 1; Test String 2;")
+    typingLogic.incrementIndices(true)
+    XCTAssertEqual(typingLogic.index, 0);
+    XCTAssertEqual(typingLogic.correctIndex, 0);
+    XCTAssertEqual(typingLogic.maxIndex, 0);
+  }
+  
+  func testIncrementIndices2() {
+    let typingLogic = TypingLogic(typingGoal: "Test String 1; Test String 2;")
+    typingLogic.incrementIndices(false)
+    XCTAssertEqual(typingLogic.index, 0);
+    XCTAssertEqual(typingLogic.correctIndex, -1);
+    XCTAssertEqual(typingLogic.maxIndex, -1);
+  }
+  
+  func testIncrementIndices3() {
+    let typingLogic = TypingLogic(typingGoal: "Test String 1; Test String 2;")
+    typingLogic.maxIndex = 5
+    typingLogic.incrementIndices(true)
+    XCTAssertEqual(typingLogic.index, 0);
+    XCTAssertEqual(typingLogic.correctIndex, 0);
+    XCTAssertEqual(typingLogic.maxIndex, 5);
+  }
+  
+  func testDecrementIndices1() {
+    let typingLogic = TypingLogic(typingGoal: "Test String 1; Test String 2;")
+    typingLogic.maxIndex = 0
+    typingLogic.correctIndex = 0
+    typingLogic.index = 0;
+    
+    typingLogic.decrementIndices(true)
+    XCTAssertEqual(typingLogic.index, -1);
+    XCTAssertEqual(typingLogic.correctIndex, -1);
+    XCTAssertEqual(typingLogic.maxIndex, 0);
+    
+    typingLogic.decrementIndices(true)
+    XCTAssertEqual(typingLogic.index, -1);
+    XCTAssertEqual(typingLogic.correctIndex, -1);
+    XCTAssertEqual(typingLogic.maxIndex, 0);
+  }
+  
+  func testDecrementIndices2() {
+    let typingLogic = TypingLogic(typingGoal: "Test String 1; Test String 2;")
+    typingLogic.maxIndex = 0
+    typingLogic.correctIndex = 0
+    typingLogic.index = 0;
+    
+    typingLogic.decrementIndices(false)
+    XCTAssertEqual(typingLogic.index, -1);
+    XCTAssertEqual(typingLogic.correctIndex, 0);
+    XCTAssertEqual(typingLogic.maxIndex, 0);
+  }
+  
+  func testFillWhiteSpace1() {
+    let typingLogic = TypingLogic(typingGoal: "\n          Hello")
+    typingLogic.processCharacter("\n")
+    XCTAssertEqual(typingLogic.index, 10)
+    XCTAssertEqual(typingLogic.correctIndex, 10)
+    XCTAssertEqual(typingLogic.maxIndex, 10)
+  }
+  
+  func testFillWhiteSpace2() {
+    let typingLogic = TypingLogic(typingGoal: "\n          Hello")
+    typingLogic.processCharacter("s")
+    XCTAssertEqual(typingLogic.index, 10)
+    XCTAssertEqual(typingLogic.correctIndex, -1)
+    XCTAssertEqual(typingLogic.maxIndex, -1)
+  }
+  
+  func testFillWhiteSpaceDoesNotCrash() {
+    let typingLogic = TypingLogic(typingGoal: "\n          ")
+    typingLogic.processCharacter("\n")
+    XCTAssertEqual(typingLogic.index, 10)
+    XCTAssertEqual(typingLogic.correctIndex, 10)
+    XCTAssertEqual(typingLogic.maxIndex, 10)
+  }
+  
+  func testRemoveWhiteSpace1() {
+    let typingLogic = TypingLogic(typingGoal: "\n          Hello")
+    typingLogic.processCharacter("\n")
+    typingLogic.deleteCharacter()
+    XCTAssertEqual(typingLogic.index, 0)
+    XCTAssertEqual(typingLogic.correctIndex, 0)
+    XCTAssertEqual(typingLogic.maxIndex, 10)
+  }
+  
+  func testRemoveWhiteSpace2() {
+    let typingLogic = TypingLogic(typingGoal: "a    asdf Hello")
+    typingLogic.index = 4
+    typingLogic.correctIndex = 4
+    typingLogic.maxIndex = 4
+    
+    typingLogic.deleteCharacter()
+    XCTAssertEqual(typingLogic.index, 3)
+    XCTAssertEqual(typingLogic.correctIndex, 3)
+    XCTAssertEqual(typingLogic.maxIndex, 4rt)
+  }
+  
+  func testRemoveWhiteSpaceDoesNotCrash() {
+    let typingLogic = TypingLogic(typingGoal: "          Hello")
+    typingLogic.index = 9
+    typingLogic.correctIndex = 9
+    typingLogic.maxIndex = 9
+    
+    typingLogic.deleteCharacter()
+    XCTAssertEqual(typingLogic.index, -1)
+    XCTAssertEqual(typingLogic.correctIndex, -1)
+    XCTAssertEqual(typingLogic.maxIndex, 9)
   }
   
   func testUpdateMistypedContextMap() {
@@ -200,11 +323,25 @@ class TypingLogicTest: XCTestCase {
     
     XCTAssertEqual(typingLogic.processCharacter(" "), true)
     XCTAssertEqual(typingLogic.processCharacter("S"), true)
+    XCTAssertEqual(typingLogic.processCharacter("r"), false)
+    XCTAssertEqual(typingLogic.processCharacter("i"), false)
+    XCTAssertEqual(typingLogic.index, 7)
+    XCTAssertEqual(typingLogic.correctIndex, 5)
+    XCTAssertEqual(typingLogic.maxIndex, 5)
+    
+    typingLogic.deleteCharacter()
+    typingLogic.deleteCharacter()
+    XCTAssertEqual(typingLogic.index, 5)
+    XCTAssertEqual(typingLogic.correctIndex, 5)
+    XCTAssertEqual(typingLogic.maxIndex, 5)
+    
     XCTAssertEqual(typingLogic.processCharacter("t"), true)
     XCTAssertEqual(typingLogic.processCharacter("r"), true)
     XCTAssertEqual(typingLogic.index, 7)
     XCTAssertEqual(typingLogic.correctIndex, 7)
     XCTAssertEqual(typingLogic.maxIndex, 7)
+    
+    XCTAssertEqual(typingLogic.mistypedContextMap, ["Test ": 1, "s∂ St": 1])
   }
   
   func testIsDone() {
