@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45C253721D1D72EC00EFD549"
-               BuildableName = "Smart Typing Help.app"
-               BlueprintName = "Smart Typing Help"
-               ReferencedContainer = "container:Smart Typing Help.xcodeproj">
+               BlueprintIdentifier = "4533C80A1D5FE0DC00BA0109"
+               BuildableName = "TypingSmartTrainer.app"
+               BlueprintName = "TypingSmartTrainer"
+               ReferencedContainer = "container:TypingSmartTrainer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45C253861D1D72EF00EFD549"
-               BuildableName = "Smart Typing HelpTests.xctest"
-               BlueprintName = "Smart Typing HelpTests"
-               ReferencedContainer = "container:Smart Typing Help.xcodeproj">
+               BlueprintIdentifier = "4533C81B1D5FE0DC00BA0109"
+               BuildableName = "TypingSmartTrainerTests.xctest"
+               BlueprintName = "TypingSmartTrainerTests"
+               ReferencedContainer = "container:TypingSmartTrainer.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45C253911D1D72EF00EFD549"
-               BuildableName = "Smart Typing HelpUITests.xctest"
-               BlueprintName = "Smart Typing HelpUITests"
-               ReferencedContainer = "container:Smart Typing Help.xcodeproj">
+               BlueprintIdentifier = "4533C8261D5FE0DC00BA0109"
+               BuildableName = "TypingSmartTrainerUITests.xctest"
+               BlueprintName = "TypingSmartTrainerUITests"
+               ReferencedContainer = "container:TypingSmartTrainer.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45C253721D1D72EC00EFD549"
-            BuildableName = "Smart Typing Help.app"
-            BlueprintName = "Smart Typing Help"
-            ReferencedContainer = "container:Smart Typing Help.xcodeproj">
+            BlueprintIdentifier = "4533C80A1D5FE0DC00BA0109"
+            BuildableName = "TypingSmartTrainer.app"
+            BlueprintName = "TypingSmartTrainer"
+            ReferencedContainer = "container:TypingSmartTrainer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45C253721D1D72EC00EFD549"
-            BuildableName = "Smart Typing Help.app"
-            BlueprintName = "Smart Typing Help"
-            ReferencedContainer = "container:Smart Typing Help.xcodeproj">
+            BlueprintIdentifier = "4533C80A1D5FE0DC00BA0109"
+            BuildableName = "TypingSmartTrainer.app"
+            BlueprintName = "TypingSmartTrainer"
+            ReferencedContainer = "container:TypingSmartTrainer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45C253721D1D72EC00EFD549"
-            BuildableName = "Smart Typing Help.app"
-            BlueprintName = "Smart Typing Help"
-            ReferencedContainer = "container:Smart Typing Help.xcodeproj">
+            BlueprintIdentifier = "4533C80A1D5FE0DC00BA0109"
+            BuildableName = "TypingSmartTrainer.app"
+            BlueprintName = "TypingSmartTrainer"
+            ReferencedContainer = "container:TypingSmartTrainer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

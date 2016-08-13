@@ -40,7 +40,7 @@ class TestTypingLogic: TypingLogic {
 }
 
 class TypingLogicTest: XCTestCase {
-    
+  
   func testUpdateMap() {
     var map: [String: Int] = [:]
     let typingLogic = TypingLogic(typingGoal: "Test String 1; Test String 2;")
@@ -151,7 +151,7 @@ class TypingLogicTest: XCTestCase {
     typingLogic.deleteCharacter()
     XCTAssertEqual(typingLogic.index, 3)
     XCTAssertEqual(typingLogic.correctIndex, 3)
-    XCTAssertEqual(typingLogic.maxIndex, 4rt)
+    XCTAssertEqual(typingLogic.maxIndex, 4)
   }
   
   func testRemoveWhiteSpaceDoesNotCrash() {
@@ -201,7 +201,7 @@ class TypingLogicTest: XCTestCase {
   
   func testIncrementWordsTyped() {
     let typingLogic = TestTypingLogic(typingGoal: "The number of\nwords typedIs_seven!")
-
+    
     for character in "The number of".characters {
       typingLogic.incrementWordsTyped(character)
       typingLogic.shiftPreceedingCharacters(character)

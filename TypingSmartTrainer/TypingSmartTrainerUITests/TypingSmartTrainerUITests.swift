@@ -1,14 +1,14 @@
 //
-//  Smart_Typing_HelpUITests.swift
-//  Smart Typing HelpUITests
+//  TypingSmartTrainerUITests.swift
+//  TypingSmartTrainerUITests
 //
-//  Created by Philip Alex Etling on 6/24/16.
+//  Created by Philip Alex Etling on 8/13/16.
 //  Copyright © 2016 GC. All rights reserved.
 //
 
 import XCTest
 
-class Smart_Typing_HelpUITests: XCTestCase {
+class TypingSmartTrainerUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

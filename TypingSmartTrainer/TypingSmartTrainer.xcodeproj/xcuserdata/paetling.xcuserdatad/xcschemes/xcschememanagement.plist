@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Smart Typing Help.xcscheme</key>
+		<key>TypingSmartTrainer.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>45C253721D1D72EC00EFD549</key>
+		<key>4533C80A1D5FE0DC00BA0109</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>45C253861D1D72EF00EFD549</key>
+		<key>4533C81B1D5FE0DC00BA0109</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>45C253911D1D72EF00EFD549</key>
+		<key>4533C8261D5FE0DC00BA0109</key>
 		<dict>
 			<key>primary</key>
 			<true/>
