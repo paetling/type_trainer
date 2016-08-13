@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45C253771D1D72ED00EFD549 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C253761D1D72ED00EFD549 /* AppDelegate.swift */; };
+		45C253791D1D72EF00EFD549 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C253781D1D72EF00EFD549 /* ViewController.swift */; };
+		45C2537C1D1D72EF00EFD549 /* Smart_Typing_Help.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45C2537A1D1D72EF00EFD549 /* Smart_Typing_Help.xcdatamodeld */; };
+		45C2537E1D1D72EF00EFD549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C2537D1D1D72EF00EFD549 /* Assets.xcassets */; };
+		45C253811D1D72EF00EFD549 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45C2537F1D1D72EF00EFD549 /* Main.storyboard */; };
+		45C2538C1D1D72EF00EFD549 /* TypingLogicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C2538B1D1D72EF00EFD549 /* TypingLogicTest.swift */; };
+		45C253971D1D72EF00EFD549 /* Smart_Typing_HelpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C253961D1D72EF00EFD549 /* Smart_Typing_HelpUITests.swift */; };
+		45C253A51D1D82CD00EFD549 /* TypingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C253A41D1D82CD00EFD549 /* TypingView.swift */; };
+		45C253A71D1DA17F00EFD549 /* TypingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C253A61D1DA17F00EFD549 /* TypingLogic.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45C253881D1D72EF00EFD549 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45C2536B1D1D72EC00EFD549 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45C253721D1D72EC00EFD549;
+			remoteInfo = "Smart Typing Help";
+		};
+		45C253931D1D72EF00EFD549 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45C2536B1D1D72EC00EFD549 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45C253721D1D72EC00EFD549;
+			remoteInfo = "Smart Typing Help";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		45C253731D1D72EC00EFD549 /* Smart Typing Help.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Typing Help.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45C253761D1D72ED00EFD549 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45C253781D1D72EF00EFD549 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45C2537B1D1D72EF00EFD549 /* Smart_Typing_Help.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Smart_Typing_Help.xcdatamodel; sourceTree = "<group>"; };
+		45C2537D1D1D72EF00EFD549 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45C253801D1D72EF00EFD549 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45C253821D1D72EF00EFD549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45C253871D1D72EF00EFD549 /* Smart Typing HelpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart Typing HelpTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45C2538B1D1D72EF00EFD549 /* TypingLogicTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingLogicTest.swift; sourceTree = "<group>"; };
+		45C2538D1D1D72EF00EFD549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45C253921D1D72EF00EFD549 /* Smart Typing HelpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart Typing HelpUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45C253961D1D72EF00EFD549 /* Smart_Typing_HelpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_Typing_HelpUITests.swift; sourceTree = "<group>"; };
+		45C253981D1D72EF00EFD549 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45C253A41D1D82CD00EFD549 /* TypingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingView.swift; sourceTree = "<group>"; };
+		45C253A61D1DA17F00EFD549 /* TypingLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingLogic.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45C253701D1D72EC00EFD549 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45C253841D1D72EF00EFD549 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45C2538F1D1D72EF00EFD549 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45C2536A1D1D72EC00EFD549 = {
+			isa = PBXGroup;
+			children = (
+				45C253751D1D72ED00EFD549 /* Smart Typing Help */,
+				45C2538A1D1D72EF00EFD549 /* Smart Typing HelpTests */,
+				45C253951D1D72EF00EFD549 /* Smart Typing HelpUITests */,
+				45C253741D1D72EC00EFD549 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45C253741D1D72EC00EFD549 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45C253731D1D72EC00EFD549 /* Smart Typing Help.app */,
+				45C253871D1D72EF00EFD549 /* Smart Typing HelpTests.xctest */,
+				45C253921D1D72EF00EFD549 /* Smart Typing HelpUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45C253751D1D72ED00EFD549 /* Smart Typing Help */ = {
+			isa = PBXGroup;
+			children = (
+				45C253761D1D72ED00EFD549 /* AppDelegate.swift */,
+				45C253781D1D72EF00EFD549 /* ViewController.swift */,
+				45C2537D1D1D72EF00EFD549 /* Assets.xcassets */,
+				45C2537F1D1D72EF00EFD549 /* Main.storyboard */,
+				45C253821D1D72EF00EFD549 /* Info.plist */,
+				45C2537A1D1D72EF00EFD549 /* Smart_Typing_Help.xcdatamodeld */,
+				45C253A41D1D82CD00EFD549 /* TypingView.swift */,
+				45C253A61D1DA17F00EFD549 /* TypingLogic.swift */,
+			);
+			path = "Smart Typing Help";
+			sourceTree = "<group>";
+		};
+		45C2538A1D1D72EF00EFD549 /* Smart Typing HelpTests */ = {
+			isa = PBXGroup;
+			children = (
+				45C2538B1D1D72EF00EFD549 /* TypingLogicTest.swift */,
+				45C2538D1D1D72EF00EFD549 /* Info.plist */,
+			);
+			path = "Smart Typing HelpTests";
+			sourceTree = "<group>";
+		};
+		45C253951D1D72EF00EFD549 /* Smart Typing HelpUITests */ = {
+			isa = PBXGroup;
+			children = (
+				45C253961D1D72EF00EFD549 /* Smart_Typing_HelpUITests.swift */,
+				45C253981D1D72EF00EFD549 /* Info.plist */,
+			);
+			path = "Smart Typing HelpUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45C253721D1D72EC00EFD549 /* Smart Typing Help */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45C2539B1D1D72EF00EFD549 /* Build configuration list for PBXNativeTarget "Smart Typing Help" */;
+			buildPhases = (
+				45C2536F1D1D72EC00EFD549 /* Sources */,
+				45C253701D1D72EC00EFD549 /* Frameworks */,
+				45C253711D1D72EC00EFD549 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Smart Typing Help";
+			productName = "Smart Typing Help";
+			productReference = 45C253731D1D72EC00EFD549 /* Smart Typing Help.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45C253861D1D72EF00EFD549 /* Smart Typing HelpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45C2539E1D1D72EF00EFD549 /* Build configuration list for PBXNativeTarget "Smart Typing HelpTests" */;
+			buildPhases = (
+				45C253831D1D72EF00EFD549 /* Sources */,
+				45C253841D1D72EF00EFD549 /* Frameworks */,
+				45C253851D1D72EF00EFD549 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45C253891D1D72EF00EFD549 /* PBXTargetDependency */,
+			);
+			name = "Smart Typing HelpTests";
+			productName = "Smart Typing HelpTests";
+			productReference = 45C253871D1D72EF00EFD549 /* Smart Typing HelpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		45C253911D1D72EF00EFD549 /* Smart Typing HelpUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45C253A11D1D72EF00EFD549 /* Build configuration list for PBXNativeTarget "Smart Typing HelpUITests" */;
+			buildPhases = (
+				45C2538E1D1D72EF00EFD549 /* Sources */,
+				45C2538F1D1D72EF00EFD549 /* Frameworks */,
+				45C253901D1D72EF00EFD549 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45C253941D1D72EF00EFD549 /* PBXTargetDependency */,
+			);
+			name = "Smart Typing HelpUITests";
+			productName = "Smart Typing HelpUITests";
+			productReference = 45C253921D1D72EF00EFD549 /* Smart Typing HelpUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45C2536B1D1D72EC00EFD549 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = GC;
+				TargetAttributes = {
+					45C253721D1D72EC00EFD549 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					45C253861D1D72EF00EFD549 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 45C253721D1D72EC00EFD549;
+					};
+					45C253911D1D72EF00EFD549 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 45C253721D1D72EC00EFD549;
+					};
+				};
+			};
+			buildConfigurationList = 45C2536E1D1D72EC00EFD549 /* Build configuration list for PBXProject "Smart Typing Help" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45C2536A1D1D72EC00EFD549;
+			productRefGroup = 45C253741D1D72EC00EFD549 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45C253721D1D72EC00EFD549 /* Smart Typing Help */,
+				45C253861D1D72EF00EFD549 /* Smart Typing HelpTests */,
+				45C253911D1D72EF00EFD549 /* Smart Typing HelpUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45C253711D1D72EC00EFD549 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45C2537E1D1D72EF00EFD549 /* Assets.xcassets in Resources */,
+				45C253811D1D72EF00EFD549 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45C253851D1D72EF00EFD549 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45C253901D1D72EF00EFD549 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45C2536F1D1D72EC00EFD549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45C253791D1D72EF00EFD549 /* ViewController.swift in Sources */,
+				45C253A71D1DA17F00EFD549 /* TypingLogic.swift in Sources */,
+				45C2537C1D1D72EF00EFD549 /* Smart_Typing_Help.xcdatamodeld in Sources */,
+				45C253A51D1D82CD00EFD549 /* TypingView.swift in Sources */,
+				45C253771D1D72ED00EFD549 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45C253831D1D72EF00EFD549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45C2538C1D1D72EF00EFD549 /* TypingLogicTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45C2538E1D1D72EF00EFD549 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45C253971D1D72EF00EFD549 /* Smart_Typing_HelpUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45C253891D1D72EF00EFD549 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45C253721D1D72EC00EFD549 /* Smart Typing Help */;
+			targetProxy = 45C253881D1D72EF00EFD549 /* PBXContainerItemProxy */;
+		};
+		45C253941D1D72EF00EFD549 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45C253721D1D72EC00EFD549 /* Smart Typing Help */;
+			targetProxy = 45C253931D1D72EF00EFD549 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		45C2537F1D1D72EF00EFD549 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45C253801D1D72EF00EFD549 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45C253991D1D72EF00EFD549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		45C2539A1D1D72EF00EFD549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		45C2539C1D1D72EF00EFD549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Smart Typing Help/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.gc.me.Smart-Typing-Help";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		45C2539D1D1D72EF00EFD549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Smart Typing Help/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.gc.me.Smart-Typing-Help";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		45C2539F1D1D72EF00EFD549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Smart Typing HelpTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.gc.me.Smart-Typing-HelpTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Typing Help.app/Contents/MacOS/Smart Typing Help";
+			};
+			name = Debug;
+		};
+		45C253A01D1D72EF00EFD549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Smart Typing HelpTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.gc.me.Smart-Typing-HelpTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart Typing Help.app/Contents/MacOS/Smart Typing Help";
+			};
+			name = Release;
+		};
+		45C253A21D1D72EF00EFD549 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Smart Typing HelpUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.gc.me.Smart-Typing-HelpUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Smart Typing Help";
+			};
+			name = Debug;
+		};
+		45C253A31D1D72EF00EFD549 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Smart Typing HelpUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.gc.me.Smart-Typing-HelpUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Smart Typing Help";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45C2536E1D1D72EC00EFD549 /* Build configuration list for PBXProject "Smart Typing Help" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45C253991D1D72EF00EFD549 /* Debug */,
+				45C2539A1D1D72EF00EFD549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45C2539B1D1D72EF00EFD549 /* Build configuration list for PBXNativeTarget "Smart Typing Help" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45C2539C1D1D72EF00EFD549 /* Debug */,
+				45C2539D1D1D72EF00EFD549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		45C2539E1D1D72EF00EFD549 /* Build configuration list for PBXNativeTarget "Smart Typing HelpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45C2539F1D1D72EF00EFD549 /* Debug */,
+				45C253A01D1D72EF00EFD549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		45C253A11D1D72EF00EFD549 /* Build configuration list for PBXNativeTarget "Smart Typing HelpUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45C253A21D1D72EF00EFD549 /* Debug */,
+				45C253A31D1D72EF00EFD549 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		45C2537A1D1D72EF00EFD549 /* Smart_Typing_Help.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				45C2537B1D1D72EF00EFD549 /* Smart_Typing_Help.xcdatamodel */,
+			);
+			currentVersion = 45C2537B1D1D72EF00EFD549 /* Smart_Typing_Help.xcdatamodel */;
+			path = Smart_Typing_Help.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 45C2536B1D1D72EC00EFD549 /* Project object */;
+}
