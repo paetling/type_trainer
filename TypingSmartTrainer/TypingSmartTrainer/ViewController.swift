@@ -9,12 +9,13 @@
 import Cocoa
 
 class ViewController: NSViewController {
-  
   @IBOutlet var typingView: TypingView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    typingView.typingString = "export class StateAccessor extends controller.EngineStateAccessor {\n      constructor(accessorType: controller.AccessorType,\n                  protected controller: Controller) {"
   }
+  
+
   
   override var representedObject: AnyObject? {
     didSet {

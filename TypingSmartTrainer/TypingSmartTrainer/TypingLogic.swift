@@ -96,7 +96,8 @@ class TypingLogic {
     if (character == "\n") {
       currentIndex += 1
       while(currentIndex < self.typingGoal.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)) {
-        if (self.typingGoal[self.typingGoal.startIndex.advancedBy(currentIndex)] == " ") {
+        let currentChar = self.typingGoal[self.typingGoal.startIndex.advancedBy(currentIndex)]
+        if (currentChar == " " || currentChar == "\n") {
           self.incrementIndices(!self.mistypedState)
         } else {
           break

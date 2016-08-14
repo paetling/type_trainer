@@ -10,6 +10,21 @@ import Foundation
 import Cocoa
 
 class TypingView: NSView {
+  var languages: NSPopUpButton = NSPopUpButton()
+  var repos: NSPopUpButton = NSPopUpButton()
+  var files: NSPopUpButton = NSPopUpButton()
+  
+  let programmingLanguagesPreface = NSString(string: "~/gc/type_trainer/programming_language_files").stringByExpandingTildeInPath as String
+  var programmingLanguagesNames: [String] = []
+  var repoNames: [String] = []
+  var fileNames: [String] = []
+  var currentLanguage = ""
+  var currentRepo = ""
+  var currentFile = ""
+  var fileManager = NSFileManager()
+  
+  var notficationCenter = NSNotificationCenter.defaultCenter()
+  
   var seconds = 0.0
   var currentTime: NSTimeInterval = 0.0
   var label: NSTextField = NSTextField()
@@ -35,12 +50,68 @@ class TypingView: NSView {
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
-    self.subviews = [self.label, self.timer]
+    self.subviews = [self.label, self.timer, self.languages, self.repos, self.files]
+    
+    self.files.frame = NSRect(x: self.frame.size.width - 100, y: 200, width:100, height:100)
+    self.repos.frame = NSRect(x: self.frame.size.width - 100, y: 300, width:100, height:100)
+    self.languages.frame = NSRect(x: self.frame.size.width - 100, y: 400, width:100, height:100)
+    
     self.label.editable = false
     self.label.frame = self.frame
     self.timer.editable = false
     self.timer.font = NSFont(name: "Georgia", size: 30)
     self.timer.frame = NSRect(x: self.frame.size.width - 100, y: 0, width: 100, height: 100)
+    
+    self.notficationCenter.addObserver(self, selector: #selector(selectedLanguage), name: NSPopUpButtonWillPopUpNotification, object: self.languages)
+    self.notficationCenter.addObserver(self, selector: #selector(selectedRepos), name: NSPopUpButtonWillPopUpNotification, object: self.repos)
+    self.notficationCenter.addObserver(self, selector: #selector(selectedFile), name: NSPopUpButtonWillPopUpNotification, object: self.files)
+    loadProgrammingLanguageNames()
+  }
+  
+  @objc private func selectedLanguage(notification: NSNotification) {
+    self.loadRepoNames(self.programmingLanguagesNames[self.languages.indexOfSelectedItem])
+  }
+  
+  @objc private func selectedRepos(notification: NSNotification) {
+    self.loadFileNames(self.programmingLanguagesNames[self.languages.indexOfSelectedItem], repoName: self.repoNames[self.repos.indexOfSelectedItem])
+  }
+  
+  private func setLanguageFromState() {
+    self.typingString =
+      try! NSString(contentsOfFile: "\(self.programmingLanguagesPreface)/\(self.programmingLanguagesNames[self.languages.indexOfSelectedItem])/\(self.repoNames[self.repos.indexOfSelectedItem])/\(self.fileNames[self.files.indexOfSelectedItem])", encoding: NSUTF8StringEncoding) as String
+  }
+  
+  @objc private func selectedFile(notification: NSNotification) {
+    self.setLanguageFromState()
+  }
+  
+  private func loadProgrammingLanguageNames() {
+    for programmingLanguage in try! self.fileManager.contentsOfDirectoryAtPath(self.programmingLanguagesPreface) {
+      if (programmingLanguage[programmingLanguage.startIndex.advancedBy(0)] != ".") {
+        self.programmingLanguagesNames.append(programmingLanguage)
+        self.languages.addItemWithTitle(programmingLanguage)
+      }
+    }
+  }
+  
+  private func loadRepoNames(languageName: String) {
+    self.repos.removeAllItems()
+    for repo in try! self.fileManager.contentsOfDirectoryAtPath("\(self.programmingLanguagesPreface)/\(languageName)") {
+      if (repo[repo.startIndex.advancedBy(0)] != ".") {
+        self.repoNames.append(repo)
+        self.repos.addItemWithTitle(repo)
+      }
+    }
+  }
+  
+  private func loadFileNames(languageName: String, repoName: String) {
+    self.files.removeAllItems()
+    for fileName in try! self.fileManager.contentsOfDirectoryAtPath("\(self.programmingLanguagesPreface)/\(languageName)/\(repoName)") {
+      if (fileName[fileName.startIndex.advancedBy(0)] != ".") {
+        self.fileNames.append(fileName)
+        self.files.addItemWithTitle(fileName)
+      }
+    }
   }
   
   private func incrementTime() {
@@ -82,11 +153,11 @@ class TypingView: NSView {
   }
   
   private func createCoreColoredAttributedString(string: String) -> NSMutableAttributedString {
-    return NSMutableAttributedString(string: string, attributes: [NSFontAttributeName:NSFont(name: "Georgia", size: 18.0)!])
+    return NSMutableAttributedString(string: string, attributes: [NSFontAttributeName:NSFont(name: "Optima-Bold", size: 15.0)!])
   }
   
   private func getEndString() -> String {
-    var endString = "\n\n\n\n"
+    var endString = "\n"
     endString += "Words Per Minute = \(Double(self.typingLogic.wordsTyped) / (self.seconds * 1.0 / 60.0)) \n"
     let incorrectPercentage = (self.typingLogic.charactersTyped - self.typingLogic.totalCharactersToType) * 100 / self.typingLogic.totalCharactersToType
     endString += "You had an incorrect rate of \(incorrectPercentage)%\n"
@@ -121,7 +192,7 @@ class TypingView: NSView {
   }
   
   override func mouseEntered(theEvent: NSEvent) {
-    let dog = theEvent.absoluteX
+    
     return
   }
 }
