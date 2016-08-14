@@ -39,6 +39,7 @@ class TypingView: NSView {
       self.typingLogic = TypingLogic(typingGoal: newValue)
       label.attributedStringValue = createColoredAttributedString()
       self.timer.stringValue = "00:00"
+      setupTimes()
     }
   }
   
@@ -96,6 +97,7 @@ class TypingView: NSView {
   
   private func loadRepoNames(languageName: String) {
     self.repos.removeAllItems()
+    self.repoNames.removeAll()
     for repo in try! self.fileManager.contentsOfDirectoryAtPath("\(self.programmingLanguagesPreface)/\(languageName)") {
       if (repo[repo.startIndex.advancedBy(0)] != ".") {
         self.repoNames.append(repo)
@@ -106,6 +108,7 @@ class TypingView: NSView {
   
   private func loadFileNames(languageName: String, repoName: String) {
     self.files.removeAllItems()
+    self.fileNames.removeAll()
     for fileName in try! self.fileManager.contentsOfDirectoryAtPath("\(self.programmingLanguagesPreface)/\(languageName)/\(repoName)") {
       if (fileName[fileName.startIndex.advancedBy(0)] != ".") {
         self.fileNames.append(fileName)
@@ -136,7 +139,6 @@ class TypingView: NSView {
       self.seenFirstKeyStroke = true
     }
     
-    self.updateClock()
     if theEvent.characters! == "\u{7F}"{
       self.typingLogic.deleteCharacter()
     } else {
@@ -148,6 +150,7 @@ class TypingView: NSView {
     if self.typingLogic.isDone() {
       label.attributedStringValue = self.createEndColoredAttributedString()
     } else {
+      self.updateClock()
       label.attributedStringValue = self.createColoredAttributedString()
     }
   }

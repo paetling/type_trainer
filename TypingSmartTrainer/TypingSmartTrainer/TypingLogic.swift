@@ -166,5 +166,6 @@ class TypingLogic {
     self.shiftPreceedingCharacters("∂")
     self.decrementIndices(!self.mistypedState)
     self.removeWhiteSpace()
+    self.charactersTyped += 1;
   }
 }
