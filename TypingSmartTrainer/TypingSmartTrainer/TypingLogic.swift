@@ -131,6 +131,7 @@ class TypingLogic {
   
   internal func removeWhiteSpace() {
     var currentIndex = index
+    if currentIndex < 0 { return }
     let character = self.typingGoal[self.typingGoal.startIndex.advancedBy(currentIndex)];
     if (character == " ") {
       let initialIndex = self.index
@@ -158,30 +159,30 @@ class TypingLogic {
   }
   
   func processCharacter(character: Character) -> Bool {
-    if (!isDone()) {
-      let newIndex = self.index + 1
-      let expectedCharacter = self.typingGoal[self.typingGoal.startIndex.advancedBy(newIndex)];
-      if (expectedCharacter != character) {
-        if (!self.mistypedState) {
-          self.updateMistypedContextMap(self.preceedingCharacters + [expectedCharacter])
-        }
-        self.updateMistypedCharacterMap(expectedCharacter)
-        self.mistypedIndices.insert(newIndex)
-      } else if (!self.mistypedState) {
-        if (newIndex > self.maxIndex) {
-          totalCharactersToType += 1
-          self.incrementWordsTyped(character)
-        }
+    let newIndex = self.index + 1
+    if (isDone() || newIndex >= self.typingGoal.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)) { return true}
+    
+    let expectedCharacter = self.typingGoal[self.typingGoal.startIndex.advancedBy(newIndex)];
+    if (expectedCharacter != character) {
+      if (!self.mistypedState) {
+        self.updateMistypedContextMap(self.preceedingCharacters + [expectedCharacter])
       }
-      
-      self.incrementIndices(expectedCharacter == character && !self.mistypedState)
-      self.shiftPreceedingCharacters(character)
-      self.charactersTyped += 1;
-      
-      self.fillWhiteSpace()
-      return expectedCharacter == character
+      self.updateMistypedCharacterMap(expectedCharacter)
+      self.mistypedIndices.insert(newIndex)
+    } else if (!self.mistypedState) {
+      if (newIndex > self.maxIndex) {
+        totalCharactersToType += 1
+        self.incrementWordsTyped(character)
+      }
     }
-    return true
+      
+    self.incrementIndices(expectedCharacter == character && !self.mistypedState)
+    self.shiftPreceedingCharacters(character)
+    self.charactersTyped += 1;
+      
+    self.fillWhiteSpace()
+    return expectedCharacter == character
+ 
   }
   
   func deleteCharacter() {
