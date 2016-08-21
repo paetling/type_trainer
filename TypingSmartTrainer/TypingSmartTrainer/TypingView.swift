@@ -11,8 +11,9 @@ import Cocoa
 
 class TypingView: NSView {
   var languages: NSPopUpButton = NSPopUpButton()
-  var repos: NSPopUpButton = NSPopUpButton()
-  var files: NSPopUpButton = NSPopUpButton()
+    var repos: NSPopUpButton = NSPopUpButton()
+    var files: NSPopUpButton = NSPopUpButton()
+    var shuffle: NSPopUpButton = NSPopUpButton()
   
   let programmingLanguagesPreface = NSString(string: "~/gc/type_trainer/programming_language_files").stringByExpandingTildeInPath as String
   var programmingLanguagesNames: [String] = []
@@ -37,6 +38,9 @@ class TypingView: NSView {
     }
     set(newValue) {
       self.typingLogic = TypingLogic(typingGoal: newValue)
+        if (self.shuffle.selectedItem?.title == "Shuffle") {
+            self.typingLogic.shuffle()
+        }
       label.attributedStringValue = createColoredAttributedString()
       self.timer.stringValue = "00:00"
       setupTimes()
@@ -51,11 +55,14 @@ class TypingView: NSView {
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
-    self.subviews = [self.label, self.timer, self.languages, self.repos, self.files]
+    self.subviews = [self.label, self.timer, self.languages, self.repos, self.files, self.shuffle]
     
     self.files.frame = NSRect(x: self.frame.size.width - 100, y: 200, width:100, height:100)
     self.repos.frame = NSRect(x: self.frame.size.width - 100, y: 300, width:100, height:100)
     self.languages.frame = NSRect(x: self.frame.size.width - 100, y: 400, width:100, height:100)
+    self.shuffle.frame = NSRect(x: self.frame.size.width - 100, y: 500, width:100, height:100)
+    
+    self.shuffle.addItemsWithTitles(["Shuffle", "Do Not Shuffle"])
     
     self.label.editable = false
     self.label.frame = self.frame

@@ -38,12 +38,19 @@ class TypingLogic {
   internal func shuffle() {
     var wordArray = self.originalGoal.stringByReplacingOccurrencesOfString("\n", withString: " ").characters.split(" ").map(String.init)
     var newGoal = ""
+    var currentLine = ""
     while wordArray.count > 0 {
-        if (newGoal.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 150) {
+        if (currentLine.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 150) {
             newGoal += "\n"
+            currentLine = ""
         }
         let randomIndex = Int(arc4random_uniform(UInt32(wordArray.count)))
-        newGoal += wordArray.removeAtIndex(randomIndex)
+        var wordToAdd = "\(wordArray.removeAtIndex(randomIndex))"
+        if wordArray.count > 0 {
+            wordToAdd += " "
+        }
+        newGoal += wordToAdd
+        currentLine += wordToAdd
     }
     self.typingGoal = newGoal
   }

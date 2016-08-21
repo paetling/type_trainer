@@ -14,7 +14,7 @@
 		4533C82C1D5FE0DC00BA0109 /* TypingSmartTrainerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533C82B1D5FE0DC00BA0109 /* TypingSmartTrainerUITests.swift */; };
 		4533C83A1D5FE16200BA0109 /* TypingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533C8391D5FE16200BA0109 /* TypingView.swift */; };
 		4533C83C1D5FE19000BA0109 /* TypingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533C83B1D5FE19000BA0109 /* TypingLogic.swift */; };
-		4533C8411D5FE22800BA0109 /* TypingLogicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4533C8401D5FE22800BA0109 /* TypingLogicTest.swift */; };
+		7F7A6D561D6A19950005720E /* TypingLogicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A6D551D6A19950005720E /* TypingLogicTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,8 @@
 		4533C82D1D5FE0DC00BA0109 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4533C8391D5FE16200BA0109 /* TypingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingView.swift; sourceTree = "<group>"; };
 		4533C83B1D5FE19000BA0109 /* TypingLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingLogic.swift; sourceTree = "<group>"; };
-		4533C8401D5FE22800BA0109 /* TypingLogicTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingLogicTest.swift; sourceTree = "<group>"; };
+		7F7A6D551D6A19950005720E /* TypingLogicTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingLogicTest.swift; sourceTree = "<group>"; };
+		7F7A6D571D6A1A5E0005720E /* TypingSmartTrainerTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TypingSmartTrainerTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				4533C8221D5FE0DC00BA0109 /* Info.plist */,
-				4533C8401D5FE22800BA0109 /* TypingLogicTest.swift */,
+				7F7A6D551D6A19950005720E /* TypingLogicTest.swift */,
+				7F7A6D571D6A1A5E0005720E /* TypingSmartTrainerTests-Bridging-Header.h */,
 			);
 			path = TypingSmartTrainerTests;
 			sourceTree = "<group>";
@@ -269,7 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4533C8411D5FE22800BA0109 /* TypingLogicTest.swift in Sources */,
+				7F7A6D561D6A19950005720E /* TypingLogicTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +490,7 @@
 				4533C8321D5FE0DD00BA0109 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4533C8331D5FE0DD00BA0109 /* Build configuration list for PBXNativeTarget "TypingSmartTrainerTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +499,7 @@
 				4533C8351D5FE0DD00BA0109 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4533C8361D5FE0DD00BA0109 /* Build configuration list for PBXNativeTarget "TypingSmartTrainerUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +508,7 @@
 				4533C8381D5FE0DD00BA0109 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
