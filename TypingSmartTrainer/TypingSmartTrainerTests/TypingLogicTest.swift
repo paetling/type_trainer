@@ -37,6 +37,9 @@ class TestTypingLogic: TypingLogic {
   override func removeWhiteSpace() {
     super.removeWhiteSpace()
   }
+    override func shuffle() {
+        super.shuffle()
+    }
 }
 
 class TypingLogicTest: XCTestCase {
@@ -54,7 +57,31 @@ class TypingLogicTest: XCTestCase {
     XCTAssertEqual(map["dog"], 1)
     XCTAssertEqual(map["b"], nil)
   }
-  
+
+    func testShuffle1() {
+        var map: [String: Int] = [:]
+        let originalGoal = "word1 word2 word3 word4 word5"
+        let typingLogic = TypingLogic(typingGoal: originalGoal)
+        XCTAssertEqual(typingLogic.typingGoal, originalGoal);
+        
+        typingLogic.shuffle()
+        var newTypingGoal1 = typingLogic.typingGoal;
+        typingLogic.shuffle()
+        var newTypingGoal2 = typingLogic.typingGoal;
+        typingLogic.shuffle()
+        var newTypingGoal3 = typingLogic.typingGoal;
+        
+        XCTAssertEqual(newTypingGoal1.characters.split(" ").map(String.init).count, 5);
+        XCTAssertEqual(newTypingGoal2.characters.split(" ").map(String.init).count, 5);
+        XCTAssertEqual(newTypingGoal3.characters.split(" ").map(String.init).count, 5);
+        for newTypingGoal in [newTypingGoal1, newTypingGoal2, newTypingGoal3] {
+            var typingGoalArray = newTypingGoal.characters.split(" ").map(String.init);
+            while (typingGoalArray.count > 0) {
+                XCTAssert(originalGoal.containsString(typingGoalArray.popLatest()))
+            }
+        }
+    }
+    
   func testIncrementIndices1() {
     let typingLogic = TypingLogic(typingGoal: "Test String 1; Test String 2;")
     typingLogic.incrementIndices(true)

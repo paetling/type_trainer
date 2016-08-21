@@ -12,6 +12,7 @@ var lowercaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"
 var uppercaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 class TypingLogic {
+  var originalGoal: String;
   var typingGoal: String
   var index: Int = -1
   var correctIndex: Int = -1
@@ -30,9 +31,23 @@ class TypingLogic {
   }
   
   init(typingGoal: String) {
+    self.originalGoal = typingGoal;
     self.typingGoal = typingGoal
   }
-  
+    
+  internal func shuffle() {
+    var wordArray = self.originalGoal.stringByReplacingOccurrencesOfString("\n", withString: " ").characters.split(" ").map(String.init)
+    var newGoal = ""
+    while wordArray.count > 0 {
+        if (newGoal.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 150) {
+            newGoal += "\n"
+        }
+        let randomIndex = Int(arc4random_uniform(UInt32(wordArray.count)))
+        newGoal += wordArray.removeAtIndex(randomIndex)
+    }
+    self.typingGoal = newGoal
+  }
+    
   internal func updateMap(key: String, inout map:[String: Int]){
     map[key] = map[key] == nil ? 1 : map[key]! + 1
   }
