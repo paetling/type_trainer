@@ -67,7 +67,7 @@ class TypingView: NSView {
     self.label.editable = false
     self.label.frame = self.frame
     self.timer.editable = false
-    self.timer.font = NSFont(name: "Georgia", size: 30)
+    self.timer.font = NSFont(name: "Arial-BoldMT", size: 30)
     self.timer.frame = NSRect(x: self.frame.size.width - 100, y: 0, width: 100, height: 100)
     
     self.notficationCenter.addObserver(self, selector: #selector(selectedLanguage), name: NSPopUpButtonWillPopUpNotification, object: self.languages)
@@ -163,7 +163,7 @@ class TypingView: NSView {
   }
   
   private func createCoreColoredAttributedString(string: String) -> NSMutableAttributedString {
-    return NSMutableAttributedString(string: string, attributes: [NSFontAttributeName:NSFont(name: "Optima-Bold", size: 15.0)!])
+    return NSMutableAttributedString(string: string, attributes: [NSFontAttributeName:NSFont(name: "Menlo-Bold", size: 15.0)!])
   }
   
   private func getEndString() -> String {
