@@ -91,6 +91,7 @@ class TypingView: NSView {
   
   @objc private func selectedFile(notification: NSNotification) {
     self.setLanguageFromState()
+    self.seenFirstKeyStroke = false;
   }
   
   private func loadProgrammingLanguageNames() {
